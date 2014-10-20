@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	<meta charset="utf-8">
+	     <title>NTRS IRAS Mobile Application</title>
+	     <link rel="icon" type="image/ico" href="favicon.ico"/>
+	     <meta name="viewport" content="width=device-width">
+	</head>
+	<body>
+	    <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+	    
+	    <script type="text/javascript" src="lib/jquery/jquery.min.js"></script>
+	    <script type="text/javascript" src="lib/canvasjs/canvasjs.min.js"></script>
+		
+		<script type="text/javascript" src="scripts/interface.js"></script>
+		<script type="text/javascript" src="scripts/canvasChartData.js"></script>
+		<script type="text/javascript" src="scripts/canvas_adapter.js"></script>
+		
+		<script type="text/javascript" src="scripts/kendo_adapter.js"></script>
+		<script type="text/javascript" src="scripts/main.js"></script>
+
+	    <script type="text/javascript">
+	    	 $(document).ready(
+	    		// Create a new instance of the CanvasJS Chart constructor...
+				var canvas = new Chart(canvasjs);
+				// Create a new instance of the Kendo Chart constructor...
+				var kendo = new Chart(kendo);
+
+		        canvas.renderChart('chartContainer');
+	       		canvas.renderChart('chartContainer');
+
+	        );
+        $(document).bind("kendo:skinChange", createChart);
+	    </script>
+	</body>
+</html>

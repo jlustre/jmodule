@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	<meta charset="utf-8">
+	     <title>NTRS IRAS Mobile Application</title>
+	     <link rel="icon" type="image/ico" href="favicon.ico"/>
+	     <link href="styles/kendo.common.min.css" rel="stylesheet" />
+	     <link href="styles/kendo.default.min.css" rel="stylesheet" />
+	     <link href="styles/kendo.dataviz.min.css" rel="stylesheet" />
+	     <link href="styles/kendo.dataviz.default.min.css" rel="stylesheet" />
+	     <meta name="viewport" content="width=device-width">
+	</head>
+	<body>
+	    <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+	    
+        <!--<div id="chart" style="background: center no-repeat url('../content/shared/styles/world-map.png');"></div>-->
+        <div id="chart" style="height: 300px; width: 100%;"></div>
+	    
+	    <script type="text/javascript" src="lib/jquery/jquery.min.js"></script>
+	    <script src="lib/angular/angular.min.js"></script>
+		
+		<!-- // Common Data File -->		
+		<script src="scripts/canvasChartData.js"></script>
+
+		<!-- // Using CanvasJS Library -->
+		<script src="lib/canvasjs/canvasjs.min.js"></script>
+		<script src="scripts/canvas_adapter.js"></script>
+		
+		<!-- // Using KendoUI Library -->
+    	<script src="lib/kendo/kendo.all.min.js"></script>
+		<script src="scripts/kendo_adapter.js"></script>
+		
+		<!-- //Common JS File -->
+		<script src="scripts/interface.js"></script>
+		<script src="scripts/main.js"></script>
+
+	    <script type="text/javascript">
+	    	<!-- // Using CanvasJS Library -->
+			var canvas = new Chart(canvasjs);     
+	        window.onload = canvas.renderChart('chartContainer', 'CanvasJS');
+	        
+	        <!-- // Using KendoUI Library -->
+			var kendo = new Chart(kendo);
+			window.onload = kendo.renderChart('chart', 'KendoUI');
+    </script> 
+	</body>
+</html>
